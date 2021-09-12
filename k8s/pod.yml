@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fdv0-pod
+  labels:
+    app: fdv0-pod
+spec:
+  containers:
+    - name: fdv0-pod
+      image: zdockerreg/fdv0:v4
+      command: ["export"]
+      args: ["VAR1POD=VALUE1POD"]
+      ports:
+         - containerPort: 80
+           protocol: TCP

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fdnginxv0-pod
+  labels:
+    app: fdnginxv0-pod
+spec:
+  containers:
+    - name: fdnginxv0-pod
+      image: nginx
+      ports:
+         - containerPort: 80
+           protocol: TCP
+      volumeMounts:
+         - mountPath: /etc/nginx
+           name: fdnginxv0-vol
+  volumes:
+  - name: fdnginxv0-vol
+    hostPath:
+      path: /etc/nginx
+      type: Directory 

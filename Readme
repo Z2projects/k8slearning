@@ -1,0 +1,7 @@
+- app dir contains the app image code
+- app sends back headers in response
+- k8s dir contains pod & service def for app as well as nginx
+- nginx conf if monted as a volume so that conf can be changed locally 
+- url is http://<host-ip>:30001/fdapp
+- request with json payload curl --request POST --data '{"testkey":"testvalue"}' -H "Content-Type: application/json" http://<IP>
+- request with header curl --request POST --data '{"testkey":"testvalue"}' -H "Content-Type: application/json" http://<IP>

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fdv0-deployment
+  labels:
+    app: fdv0-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fdv0-pod
+  template:
+    metadata:
+      labels:
+        app: fdv0-pod
+    spec:
+      containers:
+      - name: fdv0-pod
+        image: zdockerreg/fdv0:v5
+        ports:
+         - containerPort: 80
+           protocol: TCP
